@@ -9,6 +9,21 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <header>
+    <div class="navbar">
+      <%= link_to 'Home', requests_url %>
+
+      <% if current_user %>
+          Logged in as <%= link_to "#{current_user.full_name}", user_path(current_user) %> |
+      <%= link_to "Log Out", session_path(current_user), method: :delete %>
+      <%= link_to "Create Question", new_request_path %>
+      <% else %>
+      <%= link_to "Sign Up", new_user_path %> |
+      <%= link_to "Login",  new_session_path %>
+      <% end %>
+    </div>
+  </header>
+
   <body>
     <%= yield %>
   </body>

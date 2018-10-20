@@ -1,0 +1,8 @@
+<h1>Requests</h1>
+
+<% @requests.each do |request| %>
+<div class="request">
+  <%= image_tag request.image %>
+  <p><%= request.question %></p>
+</div>
+<% end %>
