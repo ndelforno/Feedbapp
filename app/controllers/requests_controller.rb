@@ -6,6 +6,7 @@ class RequestsController < ApplicationController
 
   def new
     @request = Request.new
+    @choice = Choice.new
   end
 
   def create
@@ -15,7 +16,7 @@ class RequestsController < ApplicationController
     @request.user = current_user
 
     if @request.save
-      redirect_to requests_url
+      redirect_to new_request_choice_path
     else
       render :new
     end

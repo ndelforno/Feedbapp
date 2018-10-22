@@ -1,0 +1,8 @@
+<%= form_for([@request, @choice]) do |f| %>
+<div class="choice">
+  <%= f.label :choice_text %>
+  <%= f.text_field :choice_text %>
+
+  <%= f.submit 'Add choice' %>
+</div>
+<% end %>
