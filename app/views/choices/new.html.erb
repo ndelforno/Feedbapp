@@ -1,8 +1,10 @@
 <%= form_for([@request, @choice]) do |f| %>
 <div class="choice">
-  <%= f.label :choice_text %>
+  <%= f.label :choice %>
   <%= f.text_field :choice_text %>
 
   <%= f.submit 'Add choice' %>
 </div>
+
+<%= link_to 'No more choices', requests_path %>
 <% end %>

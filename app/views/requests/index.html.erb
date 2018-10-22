@@ -1,8 +1,11 @@
 <h1>Requests</h1>
 
 <% @requests.each do |request| %>
+<% if !request.image %>
+<% request.image = 'https://picsum.photos/200/300' %>
+<% end %>
 <div class="request">
-  <%= image_tag request.image %>
-  <p><%= request.question %></p>
+  <%= link_to image_tag(request.image), "requests/#{request.id}" %>
+  <p><%= link_to "#{request.question}", "requests/#{request.id}" %></p>
 </div>
 <% end %>

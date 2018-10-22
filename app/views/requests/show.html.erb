@@ -1,0 +1,7 @@
+<%= image_tag @request.image %>
+<p><%= @request.question %></p>
+<div class="choice">
+  <% @request.choices.each do |choice| %>
+  <%= choice.choice_text %>
+  <% end %>
+</div>

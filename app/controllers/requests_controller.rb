@@ -16,10 +16,14 @@ class RequestsController < ApplicationController
     @request.user = current_user
 
     if @request.save
-      redirect_to new_request_choice_path
+      redirect_to new_request_choice_path(@request)
     else
       render :new
     end
+  end
+
+  def show
+    @request = Request.find(params[:id])
   end
 
   def update
