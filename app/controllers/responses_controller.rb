@@ -13,5 +13,9 @@ class ResponsesController < ApplicationController
     @response.request_id = @request.id
     @response.choice_id = params[:choice_id]
     @response.comment = params[:response][:comment]
+
+    if @response.save
+      redirect_to new_request_choice_path(@request)
+    end
   end
 end

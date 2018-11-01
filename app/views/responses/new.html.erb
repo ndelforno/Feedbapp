@@ -4,7 +4,7 @@
     <% @request.choices.each do |choice| %>
     <div class="">
 
-    <%= radio_button_tag(:choice_id, "#{choice.choice_text}") %>
+    <%= radio_button_tag(:choice_id, "#{choice.id}") %>
     <%= label_tag(:choice_id, "#{choice.choice_text}") %>
     <% end %>
 

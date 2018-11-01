@@ -13,7 +13,7 @@ class ChoicesController < ApplicationController
     @choice.request_id = @request.id
 
     if @choice.save
-      redirect_to new_request_choice_path(@request)
+      redirect_to request_path(@request)
     end
 
   end
