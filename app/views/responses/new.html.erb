@@ -1,9 +1,21 @@
 <h1>Response<h1>
 
-  <%= form_for @response do |f| %>
-  <%= f.label :comment %>
-  <%= f.text_field :comment %>
+  <%= form_for ([@request,@response]) do |f| %>
+    <% @request.choices.each do |choice| %>
+    <div class="">
 
-  <%= f.submit 'submit' %>
+    <%= radio_button_tag(:choice_id, "#{choice.choice_text}") %>
+    <%= label_tag(:choice_id, "#{choice.choice_text}") %>
+    <% end %>
+
+    </div>
+    <div class="">
+
+    <%= f.label :comment %>
+    <%= f.text_field :comment %>
+
+    </div>
+
+    <%= f.submit 'submit' %>
 
   <% end %>

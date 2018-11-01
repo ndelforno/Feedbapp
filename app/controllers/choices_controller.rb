@@ -8,6 +8,7 @@ class ChoicesController < ApplicationController
   def create
     @choice = Choice.new
     @request = Request.find(params[:request_id])
+
     @choice.choice_text = params[:choice][:choice_text]
     @choice.request_id = @request.id
 

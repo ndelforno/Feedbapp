@@ -11,8 +11,7 @@ class ResponsesController < ApplicationController
 
     @response.user = current_user
     @response.request_id = @request.id
-    @response.choice_id = params[:request][:choice_id]
+    @response.choice_id = params[:choice_id]
     @response.comment = params[:response][:comment]
-
   end
 end
