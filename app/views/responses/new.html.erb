@@ -1,6 +1,15 @@
 <h1>Response<h1>
 
   <%= form_for ([@request,@response]) do |f| %>
+
+    <div class="image">
+    <%= image_tag @request.image  %>
+    </div>
+
+    <div class="request">
+    <%= @request.question  %>
+    </div>
+
     <% @request.choices.each do |choice| %>
     <div class="">
 

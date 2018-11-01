@@ -6,6 +6,6 @@
 <% end %>
 <div class="request">
   <%= link_to image_tag(request.image), "requests/#{request.id}" %>
-  <p><%= link_to "#{request.question}", "requests/#{request.id}" %></p>
+  <p><%= link_to "#{request.question}", new_request_response_path(request) %></p>
 </div>
 <% end %>
