@@ -1,1 +1,33 @@
 <h1><%= @user.full_name %></h1>
+
+  <div class="request">
+    <%@requests.each do |request| %>
+    <%= image_tag request.image  %>
+
+  <div class="question">
+    <h1><%= request.question %></h1>
+  </div>
+
+  <div class="Responses">
+    <h2>Responses : <%= request.total_responses %></h2>
+  </div>
+
+  <div class="choices">
+    <% request.choices.each do |choice| %>
+    <p><%= choice.choice_text %> : <%= choice.responses.length %></p>
+    <% end %>
+  </div>
+
+  <div class="comments">
+    <h3>Comments: </h3>
+    <%request.responses.each do |response| %>
+      <ul>
+      <% if response.comment.empty? == false %>
+          <li> <%= response.comment %> </li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+  <hr>
+  <% end %>
+  </div>

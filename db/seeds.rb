@@ -26,23 +26,25 @@ end
 Request.create(
   question: "do you like this design ?",
   user: User.all.sample,
-  image: 'http://www.webstorm.ca/images/responsive-websites.jpg'
+  image: 'app/assets/images/feedbapp_test_image.png'
 )
 end
 
+Request.all.each do |request|
 choice1 = Choice.create(
   choice_text: "Yes",
-  request_id: 1
+  request_id: request.id
 )
-
 choice2 = Choice.create(
   choice_text: "No",
-  request_id: 1
+  request_id: request.id
 )
+end
 
-response1 = Response.create(
-  user_id: 2,
-  request_id: 1,
-  choice_id: 1,
-  comment: "Good job !"
+10.times do
+Response.create(
+  user_id: User.all.sample,
+  request_id: Request.all.sample,
+  choice_id: Request.choices.all.sample,
 )
+end
