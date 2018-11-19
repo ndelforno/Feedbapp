@@ -2,17 +2,17 @@
 
   <%= form_for @request do |f| %>
   <div class="field">
-    <%= f.label :question  %>
+    <p> <%= f.label :question  %> </P>
     <%= f.text_field :question %>
   </div>
 
-  <div class="field">
+  <div class="image_upload">
     <%= f.label :image  %>
-    <%= f.file_field :image %>
+    <%= f.file_field :image, :class => 'image_upload' %>
   </div>
 
-  <div class="field">
-    <%= f.submit 'submit'%>
+  <div class="submit">
+    <%= f.submit 'submit', :class => 'submit'%>
   </div>
 
   <% end %>

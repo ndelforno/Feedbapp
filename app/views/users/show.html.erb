@@ -1,33 +1,47 @@
-<h1><%= @user.full_name %></h1>
-
-  <div class="request">
-    <%@requests.each do |request| %>
-    <%= image_tag request.image  %>
-
-  <div class="question">
-    <h1><%= request.question %></h1>
-  </div>
-
-  <div class="Responses">
-    <h2>Responses : <%= request.total_responses %></h2>
-  </div>
-
-  <div class="choices">
-    <% request.choices.each do |choice| %>
-    <p><%= choice.choice_text %> : <%= choice.responses.length %></p>
-    <% end %>
-  </div>
-
-  <div class="comments">
-    <h3>Comments: </h3>
-    <%request.responses.each do |response| %>
-      <ul>
-      <% if response.comment.empty? == false %>
-          <li> <%= response.comment %> </li>
+<div class="info">
+  <h1><%= @user.full_name %>
+  <div class="logout">
+      <% if current_user %>
+      <%= link_to "Log Out", session_path(current_user), method: :delete %>
       <% end %>
-      </ul>
-    <% end %>
   </div>
+  </h1>
+</div>
+
+  <h2>Past requests:</h2>
   <hr>
+
+<div class="history">
+    <%@requests.each do |request| %>
+    <div class="request">
+      <div class="image">
+        <%= image_tag request.image  %>
+      </div>
+
+      <div class="question">
+        <h1><%= request.question %></h1>
+      </div>
+
+      <div class="Responses">
+        <h2>Responses : <%= request.total_responses %></h2>
+      </div>
+
+      <div class="choices">
+        <% request.choices.each do |choice| %>
+        <p><%= choice.choice_text %> : <%= choice.responses.length %></p>
+        <% end %>
+      </div>
+
+      <div class="comments">
+        <h3>Comments: </h3>
+        <%request.responses.each do |response| %>
+        <ul>
+          <% if response.comment.empty? == false %>
+            <li> <%= response.comment %> </li>
+          <% end %>
+        </ul>
+        <% end %>
+      </div>
+    </div>
   <% end %>
-  </div>
+</div>
