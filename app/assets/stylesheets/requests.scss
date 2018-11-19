@@ -1,7 +1,22 @@
 // Place all the styles related to the Requests controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.request, img{
+.request{
+  display: inline-block;
+  p{
+    margin-left: 8px;
+  }
+  a{
+    margin-left: 8px;
+    color: #ff383f;
+    font-weight: bold;
+    text-decoration: none;
+  }
+}
+
+img{
   width: 400px;
   display: inline-block;
+  border-radius: 8px;
+  margin-left: 8px;
 }

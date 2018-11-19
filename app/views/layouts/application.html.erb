@@ -5,6 +5,7 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css?family=Pacifico" rel="stylesheet">
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -12,19 +13,28 @@
   <header>
     <div class="navbar">
       <%= link_to 'Home', requests_url %>
-
       <% if current_user %>
-          Logged in as <%= link_to "#{current_user.full_name}", user_path(current_user) %> |
-      <%= link_to "Log Out", session_path(current_user), method: :delete %>
-      <%= link_to "Create Question", new_request_path %>
+      <div class="profile">
+        <%= link_to "#{current_user.full_name}", user_path(current_user) %>
+      </div>
+        <%= link_to "Log Out", session_path(current_user), method: :delete %>
+      <div class="create_request">
+        <%= link_to "Create Question", new_request_path %> </h2>
+      </div>
       <% else %>
-      <%= link_to "Sign Up", new_user_path %> |
-      <%= link_to "Login",  new_session_path %>
+      <div class="user_option">
+        <%= link_to "Sign Up", new_user_path %>
+        <%= link_to "Login",  new_session_path %>
+        </div>
       <% end %>
     </div>
   </header>
 
   <body>
+    <main>
+
     <%= yield %>
+
+    </main>
   </body>
 </html>
