@@ -3,7 +3,7 @@
 <% request.image = 'https://picsum.photos/200/300' %>
 <% end %>
 <div class="request">
-  <%= link_to image_tag(request.image), "requests/#{request.id}" %>
-  <p><%= link_to "#{request.question}", new_request_response_path(request) %></p>
+  <%= link_to image_tag(request.image), new_request_response_path(request) %>
+  <p><%= link_to "#{request.question}", new_request_response_path(request) %> created by: <%= request.user.full_name %></p>
 </div>
 <% end %>
