@@ -12,7 +12,7 @@ class RequestsController < ApplicationController
   def create
     @request = Request.new
     @request.question = params[:request][:question]
-    @request.image = params[:request][:image]
+    @request.image.attach(params[:request][:image])
     @request.user = current_user
 
     if @request.save
