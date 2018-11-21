@@ -1,3 +1,33 @@
 // Place all the styles related to the Choices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.new_choice{
+  font-size: 32px;
+  margin:auto;
+  border: 1px solid #ff383f;
+  border-radius: 8px;
+  text-align: center;
+  width: 350px;
+  padding: 24px;
+  input {
+    border-radius: 4px;
+    height: 20px;
+  }
+  .submit{
+    font-family: 'Pacifico';
+    color: white;
+    width: 100px;
+    height: 32px;
+    text-transform: uppercase;
+    background-color: #ff383f;
+  }
+}
+
+.stop_choice{
+  text-decoration: none;
+  color: black;
+}
+
+.stop_choice:hover{
+  color: #ff383f;
+}

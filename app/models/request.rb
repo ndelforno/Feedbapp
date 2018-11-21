@@ -7,4 +7,6 @@ class Request < ApplicationRecord
   def total_responses()
     return self.responses.length
   end
+
+  validates :question, :image, presence: true
 end

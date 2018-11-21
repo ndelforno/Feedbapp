@@ -3,8 +3,8 @@
   <%= f.label :choice %>
   <%= f.text_field :choice_text %>
 
-  <%= f.submit 'Add choice' %>
+  <%= f.submit 'Add choice', :class => "submit" %>
 </div>
 
-<%= link_to 'No more choices', requests_path %>
+<%= link_to 'No more choices', requests_path, :class => "stop_choice" %>
 <% end %>
